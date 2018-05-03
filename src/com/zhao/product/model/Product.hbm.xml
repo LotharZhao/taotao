@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.zhao.product.model.Product" table="t_product">
+		<id name="pid" column="gid">
+		 	<generator class="native"></generator>
+		 </id>
+		 <property name="pname"></property>
+		 <property name="nowprice"></property>
+		 <property name="img1"></property>
+		 <property name="img2"></property>
+		 <property name="star"></property>
+		 <property name="desc" column="pdesc"></property>
+		 <property name="ptime"></property>
+		 <property name="ishot"></property>
+		 
+		 <many-to-one name="categorySecond" lazy="false" class="com.zhao.categorysecond.model.CategorySecond" column="csid"></many-to-one>
+	</class>
+</hibernate-mapping>

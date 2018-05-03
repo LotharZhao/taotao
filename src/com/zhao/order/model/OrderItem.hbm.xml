@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.zhao.order.model.OrderItem" table="t_orderitem">
+		<id name="oiid">
+		 	<generator class="native"></generator>
+		 </id>
+		 <property name="count"></property>
+		 <property name="subtotal"></property>
+		 
+		 <many-to-one name="order" class="com.zhao.order.model.Order" column="oid"></many-to-one>
+		 <many-to-one name="product" class="com.zhao.product.model.Product" column="gid" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>

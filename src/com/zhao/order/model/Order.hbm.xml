@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.zhao.order.model.Order" table="t_order">
+		<id name="oid">
+		 	<generator class="native"></generator>
+		 </id>
+		 <property name="total"></property>
+		 <property name="ordertime"></property>
+		 <property name="state"></property>
+		 <property name="name"></property>
+		 <property name="addr"></property>
+		 <property name="phone"></property>
+		 <property name="remark"></property>
+		 <property name="payment"></property>
+		 
+		 <many-to-one name="user" class="com.zhao.user.model.User" column="uid" lazy="false"></many-to-one>
+		 <set name="orderItems" cascade="save-update" lazy="false">
+		 	<key column="uid"></key>
+		 	<one-to-many class="com.zhao.order.model.OrderItem"/>
+		 </set>
+	</class>
+</hibernate-mapping>
