@@ -4,7 +4,7 @@ import com.zhao.admin.model.Admin;
 
 /**
  * 管理员模块持久层
- * @author zhaoliangtao 
+ * @author zhaoliangtao
  *
  */
 public interface AdminDao {
